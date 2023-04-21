@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% block contenido %}
+    <table id="departamentos" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+            </tr>
+         </thead>
+        <tbody>
+          {% for depto in departamentos %}
+            <tr>
+                <td>{{depto.DeptoId}}</td>
+                <td>{{depto.DeptoNombre}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
+
+
+{% block js_page%}
+    
+<script>
+  $(document).ready(function () {
+    $('#departamentos').DataTable();
+  });
+
+</script>
+{% endblock js_page %}
